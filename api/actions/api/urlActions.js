@@ -8,11 +8,16 @@ const baseUrl = config.baseUrl
 
 class UrlActions {
     async createShortUrl(req, res) {
-        const longUrl = req.body.longUrl
+        console.log("-----")
+        console.log(req.body)
+        console.log("-----")
+        const {
+            longUrl
+        } = req.body
         if (!validUrl.isUri(baseUrl)) {
             return res.status(401).json('Invalid base URL')
         }
-        const shortUrlCode = shortid.generate()
+        const urlCode = shortid.generate()
         if (validUrl.isUri(longUrl)) {
             try {
                 let url = await Url.findOne({

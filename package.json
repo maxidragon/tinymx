@@ -1,0 +1,7 @@
+{
+  "name": "tinymx",
+  "version": "1.0.0",
+  "dependencies": {
+    "valid-url": "^1.0.9"
+  }
+}

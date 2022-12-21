@@ -6,7 +6,9 @@ const port = process.env.PORT || config.port
 const apiRouter = require('./routes/api')
 
 require('./db/mongoose')
-
+app.use(express.json({
+    extended: false
+}))
 app.use('/api/', apiRouter)
 
 app.listen(port, function() {

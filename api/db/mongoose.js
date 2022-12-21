@@ -9,3 +9,7 @@ mongoose.connect(connectionString, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
+
+const connection = mongoose.connection
+
+module.exports = connection
