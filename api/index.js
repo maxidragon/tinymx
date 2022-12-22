@@ -3,13 +3,14 @@ const express = require('express')
 const app = express()
 const config = require("./config.json")
 const port = process.env.PORT || config.port
-const apiRouter = require('./routes/api')
+const router = require('./routes/api')
+const redirectRouter = require('./routes/api')
 
 require('./db/mongoose')
 app.use(express.json({
     extended: false
 }))
-app.use('/api/', apiRouter)
+app.use('/', router)
 
 app.listen(port, function() {
     console.log('Listening on port ' + port + '...')

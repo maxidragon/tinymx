@@ -8,9 +8,6 @@ const baseUrl = config.baseUrl
 
 class UrlActions {
     async createShortUrl(req, res) {
-        console.log("-----")
-        console.log(req.body)
-        console.log("-----")
         const {
             longUrl
         } = req.body
@@ -45,6 +42,22 @@ class UrlActions {
             }
         } else {
             res.status(401).json('Invalid long url')
+        }
+    }
+    async redirectToUrl(req, res) {
+        try {
+            const url = await Url.findOne({
+                urlCode: req.params.code
+        })
+        if (url) {
+            return res.redirect(url.longUrl)
+        } else {
+        return res.status(404).json('URL not found')
+        }
+        }
+        catch (err) {
+            console.error(err)
+            res.status(500).json('Server Error')
         }
     }
 }
