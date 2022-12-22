@@ -2,6 +2,8 @@
   "name": "tinymx",
   "version": "1.0.0",
   "dependencies": {
+    "express": "^4.18.2",
+    "shortid": "^2.2.16",
     "valid-url": "^1.0.9"
   }
 }
