@@ -1,11 +1,14 @@
-import './App.css';
+import React from 'react'
+import './App.css'
+import URL from './components/URL'
 
-function App() {
-  return (
+class App extends React.Component {
+  render() {
+    return (
     <div className="App">
-
+        <URL />
     </div>
-  );
+  )}
 }
 
-export default App;
+export default App

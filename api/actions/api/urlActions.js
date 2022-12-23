@@ -12,7 +12,7 @@ class UrlActions {
             longUrl
         } = req.body
         if (!validUrl.isUri(baseUrl)) {
-            return res.status(401).json('Invalid base URL')
+            return res.status(401).json('Invalid base ShortURL')
         }
         const urlCode = shortid.generate()
         if (validUrl.isUri(longUrl)) {
@@ -52,7 +52,7 @@ class UrlActions {
         if (url) {
             return res.redirect(url.longUrl)
         } else {
-        return res.status(404).json('URL not found')
+        return res.status(404).json('ShortURL not found')
         }
         }
         catch (err) {
