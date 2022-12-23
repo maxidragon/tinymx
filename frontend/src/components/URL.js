@@ -7,20 +7,16 @@ class URL extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            shortUrl: ''
+            shortUrl: []
         }
     }
     async getShortURL(url) {
         //add url to db
         const res = await axios.post('http://127.0.0.1:5000/shorten', url)
-            .then(function (res) {
-            console.log(res.data.body)
-        })
-            .catch(function (error) {
-                console.log(error)
-            });
-        //const shortUrl = res.data
-        //this.setState({shortUrl})
+        //display url on site
+        console.log(res.data.shortUrl)
+        const shortUrl = res.data.shortUrl
+        this.setState({shortUrl})
     }
     render() {
         return (
