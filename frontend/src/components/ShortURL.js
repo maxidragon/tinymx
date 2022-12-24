@@ -1,4 +1,8 @@
 import React from 'react'
+import IconButton from '@mui/material/IconButton'
+import ContentCopyIcon from '@mui/icons-material/ContentCopy'
+import LinkIcon from '@mui/icons-material/Link'
+import QrCodeIcon from '@mui/icons-material/QrCode2'
 
 const ShortURL = props => {
     const shortURL = props.url
@@ -10,6 +14,15 @@ const ShortURL = props => {
             //Buttons for copy, visit and qrcode for url
             }
             <a className="shortUrl" href={shortURL} target="_blank" rel="noreferrer">{shortURL}</a>
+            <IconButton aria-label="ContentCopy">
+                <ContentCopyIcon />
+            </IconButton>
+            <IconButton aria-label="LinkIcon">
+                <LinkIcon />
+            </IconButton>
+            <IconButton aria-label="QrCodeIcon">
+                <QrCodeIcon />
+            </IconButton>
         </div>
     )
 }
