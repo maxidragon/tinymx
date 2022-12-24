@@ -3,8 +3,7 @@ const validUrl = require('valid-url')
 const shortid = require('shortid')
 
 const Url = require('../../db/models/URL')
-const config = require("../../config.json")
-const baseUrl = config.baseUrl
+const baseUrl = process.env.baseUrl
 
 class UrlActions {
     async createShortUrl(req, res) {

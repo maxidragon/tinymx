@@ -1,9 +1,9 @@
 const express = require('express')
 const cors = require('cors')
+const dotenv = require('dotenv')
 const bodyParser = require('body-parser')
 const app = express()
-const config = require("./config.json")
-const port = process.env.PORT || config.port
+const port = process.env.PORT || 5000
 const router = require('./routes/api')
 
 require('./db/mongoose')

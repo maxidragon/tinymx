@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 const config = require("../config.json")
-const connectionString = config.connectionString
+const dotenv = require('dotenv')
+const connectionString = process.env.DB || config.connectionString
 
 const URL = require('./models/URL')
 
