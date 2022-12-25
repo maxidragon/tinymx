@@ -14,7 +14,7 @@ const ShortURL = props => {
             //Buttons for copy, visit and qrcode for url
             }
             <a className="shortUrl" href={shortURL} target="_blank" rel="noreferrer">{shortURL}</a>
-            <IconButton aria-label="ContentCopy">
+            <IconButton aria-label="ContentCopy" onClick={() =>  navigator.clipboard.writeText(props.url)}>
                 <ContentCopyIcon />
             </IconButton>
             <IconButton aria-label="LinkIcon">
