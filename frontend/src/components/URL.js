@@ -7,7 +7,8 @@ class URL extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            shortUrl: []
+            shortUrl: [],
+            showShortUrl: false
         }
     }
     async getShortURL(url) {
@@ -17,12 +18,18 @@ class URL extends React.Component {
         console.log(res.data.shortUrl)
         const shortUrl = res.data.shortUrl
         this.setState({shortUrl})
+        this.setState({showShortUrl : true})
     }
     render() {
         return (
             <div>
-                <NewUrl onAdd={(url) => this.getShortURL(url)}/>
-                <ShortURL url={this.state.shortUrl}/>
+                <div classname="header">
+                    <h1>TinyMX</h1>
+                </div>
+                <div className="container">
+                    <NewUrl onAdd={(url) => this.getShortURL(url)}/>
+                    <ShortURL url={this.state.shortUrl} toggle={this.state.showShortUrl}/>
+                </div>
             </div>
             )}
 }

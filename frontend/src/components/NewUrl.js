@@ -19,10 +19,14 @@ function NewUrl(props) {
     }
     return (
         <div>
-            <TextField value={url} onChange={changeUrlHandler} id="outlined-basic" label="Enter long ShortURL" variant="outlined" />
-            <Button onClick={() => getShortUrl()} variant="contained" endIcon={<LinkIcon />}>
-                Get short URL
-            </Button>
+            <div id="shortUrlInput">
+                <TextField value={url} onChange={changeUrlHandler} id="outlined-basic" label="Enter long URL" variant="outlined" />
+            </div>
+            <div id="getShortUrlButton">
+                <Button onClick={() => getShortUrl()} variant="contained" endIcon={<LinkIcon />}>
+                    Get short URL
+                </Button>
+            </div>
         </div>
     )
 }
