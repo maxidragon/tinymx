@@ -1,9 +1,11 @@
+require('dotenv')
 const express = require('express')
 const validUrl = require('valid-url')
 const shortid = require('shortid')
 
 const Url = require('../../db/models/URL')
-const baseUrl = process.env.baseUrl
+const config = require("../../config.json")
+const baseUrl = process.env.baseUrl || config.baseUrl
 
 class UrlActions {
     async createShortUrl(req, res) {
