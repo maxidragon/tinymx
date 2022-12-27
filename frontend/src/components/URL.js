@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import ShortURL from './ShortURL'
 import NewUrl from './NewUrl'
+import config from '../config.json'
 
 class URL extends React.Component {
     constructor(props) {
@@ -13,7 +14,7 @@ class URL extends React.Component {
     }
     async getShortURL(url) {
         //add url to db
-        const res = await axios.post('http://127.0.0.1:5000/shorten', url)
+        const res = await axios.post((config.baseUrl + '/shorten'), url)
         //display url on site
         console.log(res.data.shortUrl)
         const shortUrl = res.data.shortUrl
