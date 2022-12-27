@@ -1,5 +1,6 @@
 body {
-  background-color: #94b8b8;
+  background-color: #9BB7D4;
+  color: #000;
 }
 .App {
   text-align: center;
@@ -22,4 +23,11 @@ body {
 }
 GitHubIcon {
   color: white;
+}
+#shortUrlButtons {
+  padding: 20px;
+}
+#shortUrlBox {
+  border: 1px solid #000;
+
 }
